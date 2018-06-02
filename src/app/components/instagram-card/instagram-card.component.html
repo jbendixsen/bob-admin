@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+        {{ instagram.name }}
+    </div>
+    <div class="card-block">
+        <img src="http://via.placeholder.com/96x96" /> </div>
+    <div class="card-footer">
+        <button class="btn btn-danger-outline" (click)=delete(instagram)>
+            Delete
+        </button>
+    </div>
+</div>
+
+<clr-modal [(clrModalOpen)]="basic">
+    <h3 class="modal-title">Remove Image</h3>
+    <div class="modal-body">
+        <p>Confirm you want to remove this item</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="basic = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="confirmedDelete()">Ok</button>
+    </div>
+</clr-modal>

@@ -7,6 +7,15 @@ import { Router } from '@angular/router';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(private router: Router) {
+    addImageReference = false;
+    constructor(private router: Router) {}
+
+    add() {
+        this.addImageReference = true;
+    }
+
+    createNewReference() {
+        this.addImageReference = false;
+        console.log('Really create it');
     }
 }

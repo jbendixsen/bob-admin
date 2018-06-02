@@ -1,21 +1,30 @@
 <clr-main-container>
-  <clr-header>
-    <div class="branding">
-      <a href="#" class="nav-link">
-        <span class="clr-icon clr-clarity-logo"></span>
-        <span class="title">Clarity</span>
-      </a>
+    <clr-header>
+        <div class="branding">
+            <a href="#" class="nav-link">
+                <span class="title">Brink of Beyond</span>
+            </a>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link nav-icon" (click)="add()">
+                <clr-icon shape="plus"></clr-icon>
+            </a>
+        </div>
+    </clr-header>
+    <div class="content-container">
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-      <div class="header-nav" [clr-nav-level]="1">
-          <a class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="active"><span class="nav-text">Home</span></a>
-          <a class="nav-link" href="#" [routerLink]="['/about']" routerLinkActive="active"><span class="nav-text">About</span></a>
-      </div>
-    <div class="header-actions">
-    </div>
-  </clr-header>
-  <div class="content-container">
-    <div class="content-area">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
 </clr-main-container>
+
+<clr-modal [(clrModalOpen)]="addImageReference">
+    <h3 class="modal-title">Add Image Reference</h3>
+    <div class="modal-body">
+        <p>Creating a new instagram mage reference</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="addImageReference = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="createNewReference()">Ok</button>
+    </div>
+</clr-modal>
